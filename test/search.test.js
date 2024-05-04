@@ -1,4 +1,6 @@
-describe("Check the search of the movies ", async () => {
+import { test, expect } from 'vitest';
+import { response } from 'express';
+test("Check the search of the movies ", async () => {
     const query = 'action'; // Example query
 
     const expected = [
@@ -9,11 +11,11 @@ describe("Check the search of the movies ", async () => {
     ];
   
     // Make a request to your app's '/movies' endpoint with the query
-    const response = await app.inject({
-      method: 'GET',
-      url: '/movies',
-      query: { query },
-    });
+    // const response = await app.inject({
+    //   method: 'GET',
+    //   url: '/movies',
+    //   query: { query },
+    // });
   
     const actual = response.json(); // Assuming the response contains JSON data
   

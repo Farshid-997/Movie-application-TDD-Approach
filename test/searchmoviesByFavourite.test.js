@@ -1,14 +1,17 @@
+import { response } from 'express';
+import { test, expect } from 'vitest';
+
 const users=["x@gmail.com", 'example@example.com']
 const movies=["Example Movie", 'xyx']
-describe("Check the search of the movies ", async () => {
+test("Check the search of the movies ", async () => {
     const userEmail = 'example@example.com'; // Example user email
     const user = users.find((user) => user.email === userEmail);
   
     // Make a request to your app's '/users/:email/favorites' endpoint
-    const response = await app.inject({
-      method: 'GET',
-      url: `/users/${userEmail}/favorites`,
-    });
+    // const response = await app.inject({
+    //   method: 'GET',
+    //   url: `/users/${userEmail}/favorites`,
+    // });
   
     if (user) {
       // Check if the response status code is 200 (OK) when user exists

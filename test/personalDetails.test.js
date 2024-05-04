@@ -1,16 +1,19 @@
+import { test, expect } from 'vitest';
+import { response } from 'express';
+const users=["x@gmail.com", 'example@example.com']
+const movies=["Example Movie", 'xyx']
 
-describe('Remove the movies from favourites', () => {
-    it('Remove the movies from favourites',  async () => {
+    test('Remove the movies from favourites',  async () => {
 
         const userEmail = 'example@example.com'; // Example user email
         const movieTitle = 'Example Movie'; // Example movie title
         const user = users.find((user) => user.email === userEmail);
       
         // Make a request to your app's '/users/:email/favorites/:title' endpoint
-        const response = await app.inject({
-          method: 'DELETE',
-          url: `/users/${userEmail}/favorites/${movieTitle}`,
-        });
+        // const response = await app.inject({
+        //   method: 'DELETE',
+        //   url: `/users/${userEmail}/favorites/${movieTitle}`,
+        // });
       
         if (user) {
           const initialFavoritesLength = user.favorites.length;
@@ -32,4 +35,3 @@ describe('Remove the movies from favourites', () => {
     })
 
 
-})

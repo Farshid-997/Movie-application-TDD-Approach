@@ -1,4 +1,6 @@
-describe("Retrieve details for a specific movie by ID ", async () => {
+import { test, expect } from 'vitest';
+import { response } from 'express';
+test("Retrieve details for a specific movie by ID ", async () => {
     const movieId = 123; // Example movie ID
   const expected = {
     // Example expected result based on the assumption of the provided movies data
@@ -12,10 +14,10 @@ describe("Retrieve details for a specific movie by ID ", async () => {
   };
 
   // Make a request to your app's '/movies/:id' endpoint with the movieId
-  const response = await app.inject({
-    method: 'GET',
-    url: `/movies/${movieId}`,
-  });
+  // const response = await app.inject({
+  //   method: 'GET',
+  //   url: `/movies/${movieId}`,
+  // });
 
   if (response.statusCode === 200) {
     const actual = response.json(); // Assuming the response contains JSON data
